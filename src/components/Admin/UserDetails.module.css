@@ -1,0 +1,122 @@
+.userContainer {
+  min-width: 70%;
+}
+
+.details {
+  overflow-y: scroll;
+  max-height: 75vh;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.userData {
+  text-align: left;
+  margin-left: 1rem;
+  width: fit-content;
+  margin-right: auto;
+}
+
+.pending {
+  font-size: 1.2rem;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+.pending::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 0);
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-left: 0.3rem;
+  position: relative;
+  top: 0.2rem;
+  animation: stateChange 1s ease-out;
+  animation-iteration-count: infinite;
+}
+
+.pending.approved::after {
+  background-color: greenyellow;
+}
+
+.pending.rejected::after {
+  background-color: red;
+}
+
+.line {
+  max-width: 90%;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 5px;
+  gap: 5px;
+}
+
+.buttons > button {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.acceptBtn {
+  background-color: #008000;
+}
+
+.acceptBtn:hover,
+.acceptBtn:active {
+  border-color: #008000;
+}
+
+.rejectBtn {
+  background-color: #ac0f0f;
+}
+
+.rejectBtn:hover,
+.rejectBtn:active {
+  border-color: #ac0f0f;
+}
+
+.passiveBtn {
+  background-color: cadetblue;
+}
+
+.passiveBtn:hover,
+.passiveBtn:active {
+  border-color: cadetblue;
+}
+
+.secondPrefBtn {
+  background-color: turquoise;
+}
+
+.secondPrefBtn:hover,
+.secondPrefBtn:active {
+  border-color: turquoise;
+}
+
+
+
+@keyframes stateChange {
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 1.1;
+  }
+  90% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1;
+  }
+}

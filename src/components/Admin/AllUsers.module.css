@@ -1,0 +1,11 @@
+.all-users {
+  min-width: 30%;
+  height: 100%;
+  max-height: 75vh;
+  border-right: 2px solid black;
+  overflow-y: scroll;
+}
+
+.all-users h3 {
+  margin: 0;
+}

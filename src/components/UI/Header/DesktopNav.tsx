@@ -15,6 +15,7 @@ const DesktopNav = () => {
   const onBarToggle = () => {
     setDropBarShow(!dropBarShow)
   }
+  const isAdmin = JSON.parse(localStorage.getItem('user') || "").role === "admin";
 
   return (
     <nav className={classes['main-nav']}>
@@ -39,6 +40,9 @@ const DesktopNav = () => {
         <FontAwesomeIcon icon={faRightFromBracket} color="red" />
       </Link>
       <ul>
+        {isAdmin && <li>
+          <Link to="/admin">Admin dashboard</Link>
+        </li>}
         <li>
           <Link to="/stats">Stats</Link>
         </li>
